@@ -1,0 +1,5 @@
+[book]
+authors = ["Jonah Simpson"]
+multilingual = false
+src = "src"
+title = "Making on the Web"
