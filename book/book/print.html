@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Making on the Web</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.1.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.2.</strong> Make it pretty</a></li><li><a href="ch2-3-make-it-do-something.html"><strong aria-hidden="true">2.3.</strong> Make it do something</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Making on the Web</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#making-on-the-web" id="making-on-the-web">Making on the web</a></h1>
+<h1><a class="header" href="#which-platform" id="which-platform">Which platform?</a></h1>
+<p>So you have an idea and want to build something to share with the world! Before you get started, you have to chose a platform build for. Really you want to build for everyone, but you have to start somewhere. Will you chose:</p>
+<ul>
+<li>Mobile (iOS or Android? or Windows Phone?)</li>
+<li>Desktop (Mac or Windows? what about Linux?)</li>
+</ul>
+<p>In general, each platform has different capabilities so you need different tools to make things for them. If you want to reach multiple platforms you basically have to rewrite your app.</p>
+<p>But every platform has a web browser! And every web browser is (almost) the same! Look what we get if we make a web app:</p>
+<ul>
+<li>Almost any platform can run it</li>
+<li>Sharing is a breeze</li>
+<li>No app store! No updates!</li>
+</ul>
+<h1><a class="header" href="#a-simple-page" id="a-simple-page">A simple page</a></h1>
+<p>A static website is a set of pages that a user can access and open in their browser.</p>
+<p>Open up your dev tools <code>Ctrl/Cmd + Shift + I</code>, and take a look at what the page you're reading is made of.</p>
+<p>It's pretty complicated! I didn't write code for this page. It was generated with a <a href="https://rust-lang-nursery.github.io/mdBook/index.html">tool</a> for making pretty online books. These days, most pages will not be written by hand. They are either generated through tools like this, or else generated on the fly by frameworks like React. For simple apps though, we can still get away with doing it by hand, and we will learn about what the browser is actually interpretting.</p>
+<p>To get started we will:</p>
+<ul>
+<li>Make a basic HTML document</li>
+<li>Apply styles to the document with CSS</li>
+<li>Make the page do something with JavaScript</li>
+</ul>
+<h1><a class="header" href="#hello-web" id="hello-web">Hello web!</a></h1>
+<p>Make a project directory and add an <code>index.html</code> file.</p>
+<p>Filename: <code>1-hello-web/index.html</code></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello web!&lt;/h1&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p>HTML is a descriptive language. Everything inside the <code>&lt;body&gt;...&lt;/body&gt;</code> tags will be displayed to the user. Here, we greet them with an <code>&lt;h1&gt;</code> (level 1 header).</p>
+<p>You can add other elements on the page with different tags:</p>
+<ul>
+<li><code>&lt;p&gt;</code> is a paragraph element. Most text on a page uses this.</li>
+<li><code>&lt;button&gt;</code> is a button!</li>
+<li><code>&lt;a&gt;</code> is a link (anchor)</li>
+<li>And a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">lot</a> more.</li>
+</ul>
+<h2><a class="header" href="#serve-output" id="serve-output">Serve output</a></h2>
+<p>You could find put the file path in your browser address bar, but I find it easier to <em>serve</em> the page locally. Go to your project directory and run:</p>
+<ul>
+<li>Python 3: <code>python -m http.server</code></li>
+<li>Python 2: <code>python -m SimpleHTTPServer</code> <a href="https://www.python.org/doc/sunset-python-2/">(you should really upgrade!)</a></li>
+</ul>
+<p>Now check out your first app at <code>localhost:8000</code> in your browser.</p>
+<h1><a class="header" href="#make-it-pretty" id="make-it-pretty">Make it pretty</a></h1>
+<p>Update <code>index.html</code> to include a stylesheet.</p>
+<p>Filename: <code>2-make-it-pretty/index.html</code></p>
+<pre><code class="language-html">&lt;html&gt;
+	&lt;head&gt;
+		&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;/&gt;
+		&lt;link href=&quot;https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		&lt;div class=&quot;full-screen&quot;&gt;
+			&lt;h1&gt;Hello web!&lt;/h1&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p>And add the styles in a new file <code>style.css</code>.</p>
+<p>Filename: <code>2-make-it-pretty/style.css</code></p>
+<pre><code class="language-css">body {
+	background: #333;
+}
+
+h1 {
+	color: #eee;	
+	font-family: 'Source Sans Pro', sans-serif;
+
+	text-align: center;
+}
+
+.full-screen {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+</code></pre>
+<h1><a class="header" href="#make-it-do-something" id="make-it-do-something">Make it do something</a></h1>
+<p>Now we will do some programming. Update <code>index.html</code> to load a script file.</p>
+<p>Filename: <code>3-make-it-do-something/index.html</code></p>
+<pre><code class="language-html">&lt;html&gt;
+	&lt;head&gt;
+		&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;/&gt;
+		&lt;link href=&quot;https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		&lt;div class=&quot;full-screen&quot;&gt;
+			&lt;h1&gt;Hello web!&lt;/h1&gt;
+			&lt;div class=&quot;image-container&quot;&gt;
+				&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<p>Make a file for the script.</p>
+<p>Filename: <code>3-make-it-do-something/script.js</code></p>
+<pre><code class="language-js">const userKey = 'NASA_API_KEY'
+
+function randn(n) {
+	return Math.floor(Math.random() * n)
+}
+
+function randomDate() {
+	const year = (2010 + randn(10)).toString().padStart(4, '0')
+	const month = (1 + randn(12)).toString().padStart(2, '0')
+	const day = (1 + randn(28)).toString().padStart(2, '0')
+	return year + '-' + month + '-' + day
+}
+
+function fetchRandomImage() {
+	const url = `https://api.nasa.gov/planetary/apod?api_key=${userKey}&amp;date=${randomDate()}`
+	console.log(`fetching ${url}...`)
+	fetch(url)
+		.then(response =&gt; response.json())
+		.then(json =&gt; {
+			const { url, title } = json
+
+			if (url.slice(-4) !== '.jpg') {
+				setInterval(fetchRandomImage, 1000)
+				return
+			}
+
+			const img = new Image()
+			img.src = url
+			document.querySelector('.image-container').append(img)
+
+			document.querySelector('p').innerText = title
+		})
+}
+
+// Wait some time before loading the image
+setTimeout(fetchRandomImage, Math.random() * 2000)
+
+</code></pre>
+<p>Here we use the NASA API to load a random astronomy image each time someone visits our page.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
