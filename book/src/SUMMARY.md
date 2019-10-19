@@ -12,6 +12,7 @@
 	- [Wait a second](./wait-a-second.md)
 	- [Web Requests](./web-requests.md)
 	- [Go fetch](./go-fetch.md)
+	- [Polish](./polish.md)
 
 - [What's next](./ch3-0-whats-next.md)
 	- [Helpful resources](./ch3-1-helpful-resources.md)

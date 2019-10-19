@@ -1,24 +1,9 @@
-function randn(n) {
-	// Random integer from [0, n)
-    return Math.floor(Math.random() * n)
-}
-
-function randomDate() {
-	// Construct a random data in YYYY-MM-DD format
-
-    const year = (2010 + randn(10)).toString().padStart(4, '0')
-    const month = (1 + randn(12)).toString().padStart(2, '0')
-    const day = (1 + randn(28)).toString().padStart(2, '0')
-    return year + '-' + month + '-' + day
-}
-
 function getRandomSpaceImageInfo() {
 	const endpoint = 'https://api.nasa.gov/planetary/apod'
 
 	const apiKey = 'DEMO_KEY'
-	const date = randomDate()
 
-	const query = `${endpoint}?api_key=${apiKey}&date=${date}`
+	const query = `${endpoint}?api_key=${apiKey}&count=1`
 
 	// Make the request
 	return fetch(query)
@@ -26,7 +11,9 @@ function getRandomSpaceImageInfo() {
 }
 
 function getImageFromSpace() {
-	getRandomSpaceImageInfo().then((imageInfo) => {
+	getRandomSpaceImageInfo().then((imageInfoList) => {
+		const imageInfo = imageInfoList[0]
+
 		const imageTitle = imageInfo.title
 		const imageUrl = imageInfo.url
 

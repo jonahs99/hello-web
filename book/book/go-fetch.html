@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html" class="active"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html" class="active"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li><li><a href="polish.html"><strong aria-hidden="true">3.4.</strong> Polish</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,27 +148,12 @@
                         <h1><a class="header" href="#go-fetch" id="go-fetch">Go fetch</a></h1>
 <p>We will update the <code>getImageFromSpace</code> function to get a random image each time it is called.</p>
 <p>Filename: <code>4-go-fetch/script.js</code></p>
-<pre><code class="language-js">function randn(n) {
-	// Random integer from [0, n)
-    return Math.floor(Math.random() * n)
-}
-
-function randomDate() {
-	// Construct a random data in YYYY-MM-DD format
-
-    const year = (2010 + randn(10)).toString().padStart(4, '0')
-    const month = (1 + randn(12)).toString().padStart(2, '0')
-    const day = (1 + randn(28)).toString().padStart(2, '0')
-    return year + '-' + month + '-' + day
-}
-
-function getRandomSpaceImageInfo() {
+<pre><code class="language-js">function getRandomSpaceImageInfo() {
 	const endpoint = 'https://api.nasa.gov/planetary/apod'
 
 	const apiKey = 'DEMO_KEY'
-	const date = randomDate()
 
-	const query = `${endpoint}?api_key=${apiKey}&amp;date=${date}`
+	const query = `${endpoint}?api_key=${apiKey}&amp;count=1`
 
 	// Make the request
 	return fetch(query)
@@ -176,7 +161,9 @@ function getRandomSpaceImageInfo() {
 }
 
 function getImageFromSpace() {
-	getRandomSpaceImageInfo().then((imageInfo) =&gt; {
+	getRandomSpaceImageInfo().then((imageInfoList) =&gt; {
+		const imageInfo = imageInfoList[0]
+
 		const imageTitle = imageInfo.title
 		const imageUrl = imageInfo.url
 
@@ -222,7 +209,7 @@ setTimeout(getImageFromSpace, delay)
                         
 
                         
-                            <a rel="next" href="ch3-0-whats-next.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="polish.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -240,7 +227,7 @@ setTimeout(getImageFromSpace, delay)
                 
 
                 
-                    <a href="ch3-0-whats-next.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="polish.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

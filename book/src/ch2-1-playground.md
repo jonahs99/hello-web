@@ -6,6 +6,8 @@ Try poking around this page with the dev tools. You can always get back to the o
 
 <div id="playground">
 
+<p>What kind of element is this?</p>
+
 <p>Maybe you can fix the splleing?</p>
 
 <p>I would prefer if this square was pink</p>

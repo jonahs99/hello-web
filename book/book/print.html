@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li><li><a href="polish.html"><strong aria-hidden="true">3.4.</strong> Polish</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,7 +152,7 @@
 <p>When people think &quot;web dev&quot; I imagine they think of UI programming. My take is more that I want to make cool things that people can easily access.</p>
 <p>Your web browser is probably one of the biggest programs on your computer. It can really do a lot!</p>
 <p>What was originally about viewing documents (I'm not actually old enough to remember this) is now basically an operating system that can quickly spin up any kind of app. An app can be a blog, but it can also be a showcase for generative art or a multiplayer game or a complex drawing program.</p>
-<p>These days, I usually default to making on the web if I just want to try something out. Usually, it's possible to throw something together pretty quickly, and if I want to share it, it's so easy!</p>
+<p>These days, I usually default to making on the web if I just want to try something out. Usually, it's possible to throw something together pretty quickly, and it's perfect if I want to share it. Who's going to go to my GitHub and figure out how to run my project? On the web, I just tell them a link.</p>
 <p>Okay I hope you are convinced, let's take a look at the plan for today.</p>
 <h1><a class="header" href="#plan" id="plan">Plan</a></h1>
 <p>Hi! This little book will walk us through making a simple web app.</p>
@@ -164,7 +164,7 @@
 <li>Add code to our web page to make it do something</li>
 </ul>
 <p>Please feel free to deviate if you are curious about something!</p>
-<p>At then end, we will work on extending our space themed app. So if you find yourself with extra time, take a look at the NASA open APIs.</p>
+<p>At then end, we will work on extending our space themed app. So if you find yourself with extra time, take a look at the ]NASA open APIs](https://api.nasa.gov/).</p>
 <h1><a class="header" href="#a-simple-page" id="a-simple-page">A simple page</a></h1>
 <p>A static website is a set of pages that a user can access and open in their browser.</p>
 <p>This book is a static website. Open up your dev tools <code>Ctrl/Cmd + Shift + I</code>, and take a look at what it's made of.</p>
@@ -174,6 +174,7 @@
 <p>Try poking around this page with the dev tools. You can always get back to the original by refreshing <code>Ctrl\Cmd + R</code>.</p>
 <hr />
 <div id="playground">
+<p>What kind of element is this?</p>
 <p>Maybe you can fix the splleing?</p>
 <p>I would prefer if this square was pink</p>
 <div id="square" style="color: white; background: blue; width: 120px; height: 120px;">
@@ -374,27 +375,12 @@ setTimeout(getImageFromSpace, delay)
 <h1><a class="header" href="#go-fetch" id="go-fetch">Go fetch</a></h1>
 <p>We will update the <code>getImageFromSpace</code> function to get a random image each time it is called.</p>
 <p>Filename: <code>4-go-fetch/script.js</code></p>
-<pre><code class="language-js">function randn(n) {
-	// Random integer from [0, n)
-    return Math.floor(Math.random() * n)
-}
-
-function randomDate() {
-	// Construct a random data in YYYY-MM-DD format
-
-    const year = (2010 + randn(10)).toString().padStart(4, '0')
-    const month = (1 + randn(12)).toString().padStart(2, '0')
-    const day = (1 + randn(28)).toString().padStart(2, '0')
-    return year + '-' + month + '-' + day
-}
-
-function getRandomSpaceImageInfo() {
+<pre><code class="language-js">function getRandomSpaceImageInfo() {
 	const endpoint = 'https://api.nasa.gov/planetary/apod'
 
 	const apiKey = 'DEMO_KEY'
-	const date = randomDate()
 
-	const query = `${endpoint}?api_key=${apiKey}&amp;date=${date}`
+	const query = `${endpoint}?api_key=${apiKey}&amp;count=1`
 
 	// Make the request
 	return fetch(query)
@@ -402,7 +388,9 @@ function getRandomSpaceImageInfo() {
 }
 
 function getImageFromSpace() {
-	getRandomSpaceImageInfo().then((imageInfo) =&gt; {
+	getRandomSpaceImageInfo().then((imageInfoList) =&gt; {
+		const imageInfo = imageInfoList[0]
+
 		const imageTitle = imageInfo.title
 		const imageUrl = imageInfo.url
 
@@ -436,14 +424,34 @@ setTimeout(getImageFromSpace, delay)
 </ul>
 <p>When we want to wait for something to happen and then do something else, we wrap the later steps in a function and use <code>then</code> to call it with the result of what we were waiting on. This requires the function we're calling to be designed to allow this, by returning a <code>Promise</code>.</p>
 <p>This is a really important use of functions in web development. They allow us to specify something to do <em>before</em> actually executing it.</p>
+<h1><a class="header" href="#polish" id="polish">Polish</a></h1>
+<p>We made a working app!</p>
+<p>What else can we do? Pick something that's interesting to you and try to make it happen:</p>
+<ul>
+<li>We should probably give credit to NASA. Add a link at the bottom of the page to the NASA Open API page: <a href="https://api.nasa.gov/">https://api.nasa.gov/</a>.</li>
+<li>Play with the styles a bit.</li>
+<li>The image info from NASA API has a separate URL for an HD image. Modify the script to load the HD image.</li>
+<li>Modify the script to include the explanation paragraph.</li>
+</ul>
 <h1><a class="header" href="#whats-next" id="whats-next">What's next</a></h1>
 <p>Astronomy picture of the day is nice, and NASA has other <a href="https://api.nasa.gov/">public APIs</a>.</p>
 <p>For the rest of the workshop, try choosing a different NASA API or any other API you know how to access to extend or make a new app.</p>
-<p>You might find some of the resources on the next page helpful.</p>
-<h1><a class="header" href="#helpful-resources" id="helpful-resources">Helpful resources</a></h1>
-<p><a href="https://developer.mozilla.org/en-US/">MDN</a>: For general Javascript/HTML/CSS questions. Half of my google searches are something like <code>mdn array splice</code>.</p>
+<p>You might find some of the resources on the next page helpful.</p>
+<h1><a class="header" href="#general-resources" id="general-resources">General resources</a></h1>
+<p>One tricky thing about web technologies is that they change really fast. If you see any JavaScript tutorials with <code>var</code> in the code, it's probably a few years old and I would suggest finding something else.</p>
+<p><a href="https://developer.mozilla.org/en-US/">MDN</a>: For general Javascript/HTML/CSS questions. Half of my google searches are something like <code>mdn array splice</code>. Documentation is close to the spec and great for checking support on different browser versions.</p>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flex box</a>: Vertical centering and other stretchy CSS magic.</p>
+<h1><a class="header" href="#native-web-apis" id="native-web-apis">Native web APIs</a></h1>
+<p>These are APIs that your browsers gives you direct access to.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">Canvas</a>: The <code>&lt;canvas&gt;</code> element let's you draw graphics. You can make cool effects, art, games, anything!</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Audio</a>: I haven't played with this much but it looks really cool. You can combine audio effects or generate sounds on the fly.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API">A whole lot more</a>: I really can't list everything!</p>
+<h1><a class="header" href="#libraries" id="libraries">Libraries</a></h1>
+<p>This is code you can include in your app. This usually involves a compilation step where some tool combines your code from multiple sources, but soon people should start moving towards using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">JavaScript modules</a>.</p>
 <p><a href="https://reactjs.org/">React</a>: For declaritive UI programming.</p>
 <h1><a class="header" href="#go-make-something" id="go-make-something">Go make something!</a></h1>
+<p>If you want to look at this book later, I will keep it posted here. It will also be posted in the TechXplore info group here:</p>
+<p><img src="techx-qr.png" alt="qr code" /></p>
 <p>Thanks for coming :)</p>
 
                     </main>
