@@ -11,5 +11,5 @@ If all goes well, we will:
 
 Please feel free to deviate if you are curious about something!
 
-At then end, we will work on extending our space themed app. So if you find yourself with extra time, take a look at the ]NASA open APIs](https://api.nasa.gov/).
+At then end, we will work on extending our space themed app. So if you find yourself with extra time, take a look at the [NASA open APIs](https://api.nasa.gov/).
 
