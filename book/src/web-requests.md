@@ -8,7 +8,7 @@ When you go type `localhost:8000` in your browser address bar, the browser asks 
 
 It's called a `GET` request, and in this case, the same computer was listening, and responds by sending the `index.html` file so it can be displayed.
 
-`GET` requests aren't only for web pages though. Depending on who you ask, you get different things back. NASA has a computer somewhere listening for computers to ask it for links to astronomy images. Try typing this address in your browser bar
+`GET` requests aren't only for web pages though. Depending on who you ask, you get different things back. It turns out that NASA has a computer somewhere listening for computers to ask it for links to astronomy images. Try typing this address in your browser bar
 
 ```
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
@@ -25,5 +25,7 @@ The NASA computer responds with some info including a link to the image. The for
 	...
 }
 ```
+
+What's that url link? I ran this yesterday, so you should get a different link.
 
 In the next section we will have our app request a random image from NASA each time the page loads.

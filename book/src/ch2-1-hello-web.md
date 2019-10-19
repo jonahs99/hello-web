@@ -24,5 +24,7 @@ You could find put the file path in your browser address bar, but I find it easi
 
 Now check out your first app at `localhost:8000` in your browser.
 
+If you don't have python installed, you can instead type the local path of the `index.html` file into your address bar. Mine looks like `file:///home/jonah/uni/techx/1-hello-web/index.html`.
+
 You should see a friendly greeting! It's looking a bit generic though. We'll get to that next.
 
