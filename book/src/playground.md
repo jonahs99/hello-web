@@ -22,6 +22,12 @@ Try poking around this page with the dev tools. You can always get back to the o
 
 <button id="button">My id is 'button'</button>
 
+<p>Where is this image from?</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Prokaryote_cell.svg/563px-Prokaryote_cell.svg.png" style="width: 120px"></img>
+
+<p>Try replacing it with another image URL</p>
+
 </div>
 
 -----
