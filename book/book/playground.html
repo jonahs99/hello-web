@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>A simple page - Making on the Web</title>
+        <title>Playground - Making on the Web</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html" class="active"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li><li><a href="polish.html"><strong aria-hidden="true">3.4.</strong> Polish</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="a-simple-page.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="playground.html" class="active"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li><li><a href="polish.html"><strong aria-hidden="true">3.4.</strong> Polish</a></li></ol></li><li><a href="whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,24 +145,40 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#a-simple-page" id="a-simple-page">A simple page</a></h1>
-<p>A static website is a set of pages that a user can access and open in their browser.</p>
-<p>This book is a static website. Open up your dev tools <code>Ctrl/Cmd + Shift + I</code>, and take a look at what it's made of.</p>
-<p>It's pretty complicated! I didn't write code for this page. It was generated with a <a href="https://rust-lang-nursery.github.io/mdBook/index.html">tool</a> for making pretty online books. These days, most pages will not be written by hand. They are either generated through tools like this, or else generated on the fly by frameworks like React. For simple apps though, we can still get away with doing it by hand, and we will learn about what the browser is actually interpretting.</p>
-<p>On the next page, we will play around with the browser tools to modify the page!</p>
+                        <h1><a class="header" href="#playground" id="playground">Playground</a></h1>
+<p>Try poking around this page with the dev tools. You can always get back to the original by refreshing <code>Ctrl\Cmd + R</code>.</p>
+<hr />
+<div id="playground">
+<p>What kind of element is this?</p>
+<p>Maybe you can fix the splleing?</p>
+<p>I would prefer if this square was pink</p>
+<div id="square" style="color: white; background: blue; width: 120px; height: 120px;">
+	My id is 'square'
+</div>
+<p>Try changing the color with the console</p>
+<p>Or changing it when you click the button</p>
+<p><button id="button">My id is 'button'</button></p>
+</div>
+<hr />
+<p>Now that we have a sense of what's in a web page, we can make our own. In the next sections we will:</p>
+<ul>
+<li>Make a basic HTML document</li>
+<li>Apply styles to the document with CSS</li>
+<li>Make the page do something with JavaScript</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="plan.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="a-simple-page.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="ch2-1-playground.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="hello-web.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -174,13 +190,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="plan.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="a-simple-page.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch2-1-playground.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="hello-web.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
