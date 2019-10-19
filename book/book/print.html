@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.1.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.2.</strong> Make it pretty</a></li><li><a href="ch2-3-make-it-do-something.html"><strong aria-hidden="true">2.3.</strong> Make it do something</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,6 +148,17 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#making-on-the-web" id="making-on-the-web">Making on the web</a></h1>
+<p>Hi! This little book will walk us through making a simple web page.</p>
+<p>Here's the plan:</p>
+<ul>
+<li>intro 10 minutes</li>
+<li>playground 20 minutes</li>
+<li>simple page (html css) 20 minutes</li>
+<li>simple page (javasript) 15 minutes</li>
+<li>simple page (nasa api) 20 minutes</li>
+<li>extensions 60 minutes</li>
+<li>other resources, remainder</li>
+</ul>
 <h1><a class="header" href="#which-platform" id="which-platform">Which platform?</a></h1>
 <p>So you have an idea and want to build something to share with the world! Before you get started, you have to chose a platform build for. Really you want to build for everyone, but you have to start somewhere. Will you chose:</p>
 <ul>
@@ -163,15 +174,31 @@
 </ul>
 <h1><a class="header" href="#a-simple-page" id="a-simple-page">A simple page</a></h1>
 <p>A static website is a set of pages that a user can access and open in their browser.</p>
-<p>Open up your dev tools <code>Ctrl/Cmd + Shift + I</code>, and take a look at what the page you're reading is made of.</p>
+<p>This book is a static website. Open up your dev tools <code>Ctrl/Cmd + Shift + I</code>, and take a look at what it's made of.</p>
 <p>It's pretty complicated! I didn't write code for this page. It was generated with a <a href="https://rust-lang-nursery.github.io/mdBook/index.html">tool</a> for making pretty online books. These days, most pages will not be written by hand. They are either generated through tools like this, or else generated on the fly by frameworks like React. For simple apps though, we can still get away with doing it by hand, and we will learn about what the browser is actually interpretting.</p>
-<p>To get started we will:</p>
+<p>On the next page, we will play around with the browser tools to modify the page!</p>
+<h1><a class="header" href="#playground" id="playground">Playground</a></h1>
+<p>Try poking around this page with the dev tools. You can always get back to the original by refreshing <code>Ctrl\Cmd + R</code>.</p>
+<hr />
+<div id="playground">
+<p>Maybe you can fix the splleing?</p>
+<p>I would prefer if this square was pink</p>
+<div id="square" style="color: white; background: blue; width: 120px; height: 120px;">
+	My id is 'square'
+</div>
+<p>Try changing the color with the console</p>
+<p>Or changing it when you click the button</p>
+<p><button id="button">My id is 'button'</button></p>
+</div>
+<hr />
+<p>Now that we have a sense of what's in a web page, we can make our own. In the next sections we will:</p>
 <ul>
 <li>Make a basic HTML document</li>
 <li>Apply styles to the document with CSS</li>
 <li>Make the page do something with JavaScript</li>
 </ul>
 <h1><a class="header" href="#hello-web" id="hello-web">Hello web!</a></h1>
+<p>We will build towards an app that uses the NASA astronomy image of the day API to bring a random image to the user from space! To get started, let's do the minimum setup to have something show up.</p>
 <p>Make a project directory and add an <code>index.html</code> file.</p>
 <p>Filename: <code>1-hello-web/index.html</code></p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
@@ -197,7 +224,9 @@
 <li>Python 2: <code>python -m SimpleHTTPServer</code> <a href="https://www.python.org/doc/sunset-python-2/">(you should really upgrade!)</a></li>
 </ul>
 <p>Now check out your first app at <code>localhost:8000</code> in your browser.</p>
+<p>You should see a friendly greeting! It's looking a bit generic though. We'll get to that next.</p>
 <h1><a class="header" href="#make-it-pretty" id="make-it-pretty">Make it pretty</a></h1>
+<p>Remember changing the colors with the dev tools? The styles are describes with CSS. Instead of applying styles to individual elements, we can group style rules together into a stylesheet to apply to the whole document.</p>
 <p>Update <code>index.html</code> to include a stylesheet.</p>
 <p>Filename: <code>2-make-it-pretty/index.html</code></p>
 <pre><code class="language-html">&lt;html&gt;
@@ -209,6 +238,7 @@
 	&lt;body&gt;
 		&lt;div class=&quot;full-screen&quot;&gt;
 			&lt;h1&gt;Hello web!&lt;/h1&gt;
+			&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/body&gt;
 &lt;/html&gt;
@@ -218,12 +248,8 @@
 <p>Filename: <code>2-make-it-pretty/style.css</code></p>
 <pre><code class="language-css">body {
 	background: #333;
-}
-
-h1 {
 	color: #eee;	
 	font-family: 'Source Sans Pro', sans-serif;
-
 	text-align: center;
 }
 
@@ -237,69 +263,123 @@ h1 {
 }
 
 </code></pre>
-<h1><a class="header" href="#make-it-do-something" id="make-it-do-something">Make it do something</a></h1>
-<p>Now we will do some programming. Update <code>index.html</code> to load a script file.</p>
-<p>Filename: <code>3-make-it-do-something/index.html</code></p>
-<pre><code class="language-html">&lt;html&gt;
-	&lt;head&gt;
-		&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;/&gt;
-		&lt;link href=&quot;https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-
-	&lt;body&gt;
-		&lt;div class=&quot;full-screen&quot;&gt;
-			&lt;h1&gt;Hello web!&lt;/h1&gt;
-			&lt;div class=&quot;image-container&quot;&gt;
-				&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-
+<p>Try adding or changing the styles. What changes if you change <code>body</code>?</p>
+<p>What a cliff hanger!</p>
+<h1><a class="header" href="#outer-space" id="outer-space">Outer space</a></h1>
+<h1><a class="header" href="#wait-a-second" id="wait-a-second">Wait a second</a></h1>
+<p>Now we'll add some code to show an image. We include code in our app by putting a <code>&lt;script&gt;</code> tag within the <code>&lt;body&gt;</code> of our html document:</p>
+<pre><code class="language-html">&lt;body&gt;
+	...
 		&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
+&lt;/body&gt;
+</code></pre>
+<p>The internet is pretty quick, so if we wanted we could provide instant gratification. To build anticipation though, let's add a delay to simulate a trip from space.</p>
+<pre><code class="language-javascript">function getImageFromSpace() {
+	const imageUrl = 'https://apod.nasa.gov/apod/image/1910/JupiterShadow_JunoGill_3535.jpg'
+	const imageTitle = 'Io Eclipse Shadow on Jupiter from Juno'
+
+	// Update the text to be the image title
+	const textElement = document.querySelector('p')
+	textElement.innerText = imageTitle
+
+	// Create a new image element from the url ...
+	const imageElement = document.createElement('img')
+	imageElement.src = imageUrl
+	
+	// ... and insert it in the document!
+	const imageContainer = document.querySelector('.image-container')
+	imageContainer.appendChild(imageElement)
+}
+
+// A random number between 0 and 3000
+const delay = Math.random() * 3000
+
+// Wait `delay` milliseconds, then run the function `getImageFromSpace`
+setTimeout(getImageFromSpace, delay)
 
 </code></pre>
-<p>Make a file for the script.</p>
-<p>Filename: <code>3-make-it-do-something/script.js</code></p>
-<pre><code class="language-js">const userKey = 'NASA_API_KEY'
-
-function randn(n) {
-	return Math.floor(Math.random() * n)
+<p>The <code>setTimeout</code> function asks the browser to please run the function we give it after a delay, which is exactly what we wanted.</p>
+<p>That's a nice picture of Jupiter, but it would be nice if we could get a new image every time. That's next!</p>
+<h1><a class="header" href="#web-requests" id="web-requests">Web Requests</a></h1>
+<p>So far, we haven't made much use of the web in our web app.</p>
+<p>When you go type <code>localhost:8000</code> in your browser address bar, the browser asks the internet</p>
+<blockquote>
+<p>please, could you get <code>localhost:8000</code> for me?</p>
+</blockquote>
+<p>It's called a <code>GET</code> request, and in this case, the same computer was listening, and responds by sending the <code>index.html</code> file so it can be displayed.</p>
+<p><code>GET</code> requests aren't only for web pages though. Depending on who you ask, you get different things back. NASA has a computer somewhere listening for computers to ask it for links to astronomy images. Try typing this address in your browser bar</p>
+<pre><code>https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+</code></pre>
+<p>The NASA computer responds with some info including a link to the image. The format is JSON:</p>
+<pre><code class="language-json">{
+	&quot;date&quot;: &quot;2019-10-18&quot;,
+	&quot;explanation&quot;: &quot;After the 2017 detecton of 1I/'Oumuamua... &quot;,
+	&quot;title&quot;: &quot;Interstellar Interloper 2I/Borisov&quot;,
+	&quot;url&quot;: &quot;https://apod.nasa.gov/apod/image/1910/STSCI-H-p1953b_1024.jpg&quot;,
+	...
+}
+</code></pre>
+<p>In the next section we will have our app request a random image from NASA each time the page loads.</p>
+<h1><a class="header" href="#go-fetch" id="go-fetch">Go fetch</a></h1>
+<p>We will update the <code>getImageFromSpace</code> to get a random image each time it is called.</p>
+<p>Filename: <code>4-go-fetch/script.js</code></p>
+<pre><code class="language-js">function randn(n) {
+	// Random integer from [0, n)
+    return Math.floor(Math.random() * n)
 }
 
 function randomDate() {
-	const year = (2010 + randn(10)).toString().padStart(4, '0')
-	const month = (1 + randn(12)).toString().padStart(2, '0')
-	const day = (1 + randn(28)).toString().padStart(2, '0')
-	return year + '-' + month + '-' + day
+	// Construct a random data in YYYY-MM-DD format
+
+    const year = (2010 + randn(10)).toString().padStart(4, '0')
+    const month = (1 + randn(12)).toString().padStart(2, '0')
+    const day = (1 + randn(28)).toString().padStart(2, '0')
+    return year + '-' + month + '-' + day
 }
 
-function fetchRandomImage() {
-	const url = `https://api.nasa.gov/planetary/apod?api_key=${userKey}&amp;date=${randomDate()}`
-	console.log(`fetching ${url}...`)
-	fetch(url)
-		.then(response =&gt; response.json())
-		.then(json =&gt; {
-			const { url, title } = json
+function getRandomSpaceImageInfo() {
+	const endpoint = 'https://api.nasa.gov/planetary/apod'
 
-			if (url.slice(-4) !== '.jpg') {
-				setInterval(fetchRandomImage, 1000)
-				return
-			}
+	const apiKey = 'DEMO_KEY'
+	const date = randomDate()
 
-			const img = new Image()
-			img.src = url
-			document.querySelector('.image-container').append(img)
+	const query = `${endpoint}?api_key=${apiKey}&amp;date=${date}`
 
-			document.querySelector('p').innerText = title
-		})
+	return fetch(query)
+				.then((response) =&gt; response.json())
 }
 
-// Wait some time before loading the image
-setTimeout(fetchRandomImage, Math.random() * 2000)
+function getImageFromSpace() {
+	getRandomSpaceImageInfo().then((imageInfo) =&gt; {
+		const imageTitle = imageInfo.title
+		const imageUrl = imageInfo.url
+
+		// Update the text to be the image title
+		const textElement = document.querySelector('p')
+		textElement.innerText = imageTitle
+
+		// Create a new image element from the url ...
+		const imageElement = document.createElement('img')
+		imageElement.src = imageUrl
+		
+		// ... and insert it in the document!
+		const imageContainer = document.querySelector('.image-container')
+		imageContainer.appendChild(imageElement)
+	})
+}
+
+// A random number between 0 and 3000
+const delay = Math.random() * 3000
+
+// Wait `delay` milliseconds, then run the function `getImageFromSpace`
+setTimeout(getImageFromSpace, delay)
 
 </code></pre>
-<p>Here we use the NASA API to load a random astronomy image each time someone visits our page.</p>
+<p>The new function <code>getRandomSpaceInfo</code> does the <code>GET</code> request from before, and also asks for the image for a random day so that we get a different one each time.</p>
+<h1><a class="header" href="#whats-next" id="whats-next">What's next</a></h1>
+<h1><a class="header" href="#helpful-resources" id="helpful-resources">Helpful resources</a></h1>
+<h1><a class="header" href="#go-make-something" id="go-make-something">Go make something!</a></h1>
+<p>Thanks for coming :)</p>
 
                     </main>
 
@@ -322,6 +402,21 @@ setTimeout(fetchRandomImage, Math.random() * 2000)
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

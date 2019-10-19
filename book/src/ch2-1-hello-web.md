@@ -1,5 +1,7 @@
 # Hello web!
 
+We will build towards an app that uses the NASA astronomy image of the day API to bring a random image to the user from space! To get started, let's do the minimum setup to have something show up.
+
 Make a project directory and add an `index.html` file.
 
 Filename: `1-hello-web/index.html`
@@ -21,4 +23,6 @@ You could find put the file path in your browser address bar, but I find it easi
 - Python 2: `python -m SimpleHTTPServer` [(you should really upgrade!)](https://www.python.org/doc/sunset-python-2/)
 
 Now check out your first app at `localhost:8000` in your browser.
+
+You should see a friendly greeting! It's looking a bit generic though. We'll get to that next.
 

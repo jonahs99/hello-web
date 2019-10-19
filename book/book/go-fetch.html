@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Make it do something - Making on the Web</title>
+        <title>Go fetch - Making on the Web</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.1.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.2.</strong> Make it pretty</a></li><li><a href="ch2-3-make-it-do-something.html" class="active"><strong aria-hidden="true">2.3.</strong> Make it do something</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html" class="active"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,80 +145,77 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#make-it-do-something" id="make-it-do-something">Make it do something</a></h1>
-<p>Now we will do some programming. Update <code>index.html</code> to load a script file.</p>
-<p>Filename: <code>3-make-it-do-something/index.html</code></p>
-<pre><code class="language-html">&lt;html&gt;
-	&lt;head&gt;
-		&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;/&gt;
-		&lt;link href=&quot;https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
-	&lt;/head&gt;
-
-	&lt;body&gt;
-		&lt;div class=&quot;full-screen&quot;&gt;
-			&lt;h1&gt;Hello web!&lt;/h1&gt;
-			&lt;div class=&quot;image-container&quot;&gt;
-				&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-
-		&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-
-</code></pre>
-<p>Make a file for the script.</p>
-<p>Filename: <code>3-make-it-do-something/script.js</code></p>
-<pre><code class="language-js">const userKey = 'NASA_API_KEY'
-
-function randn(n) {
-	return Math.floor(Math.random() * n)
+                        <h1><a class="header" href="#go-fetch" id="go-fetch">Go fetch</a></h1>
+<p>We will update the <code>getImageFromSpace</code> to get a random image each time it is called.</p>
+<p>Filename: <code>4-go-fetch/script.js</code></p>
+<pre><code class="language-js">function randn(n) {
+	// Random integer from [0, n)
+    return Math.floor(Math.random() * n)
 }
 
 function randomDate() {
-	const year = (2010 + randn(10)).toString().padStart(4, '0')
-	const month = (1 + randn(12)).toString().padStart(2, '0')
-	const day = (1 + randn(28)).toString().padStart(2, '0')
-	return year + '-' + month + '-' + day
+	// Construct a random data in YYYY-MM-DD format
+
+    const year = (2010 + randn(10)).toString().padStart(4, '0')
+    const month = (1 + randn(12)).toString().padStart(2, '0')
+    const day = (1 + randn(28)).toString().padStart(2, '0')
+    return year + '-' + month + '-' + day
 }
 
-function fetchRandomImage() {
-	const url = `https://api.nasa.gov/planetary/apod?api_key=${userKey}&amp;date=${randomDate()}`
-	console.log(`fetching ${url}...`)
-	fetch(url)
-		.then(response =&gt; response.json())
-		.then(json =&gt; {
-			const { url, title } = json
+function getRandomSpaceImageInfo() {
+	const endpoint = 'https://api.nasa.gov/planetary/apod'
 
-			if (url.slice(-4) !== '.jpg') {
-				setInterval(fetchRandomImage, 1000)
-				return
-			}
+	const apiKey = 'DEMO_KEY'
+	const date = randomDate()
 
-			const img = new Image()
-			img.src = url
-			document.querySelector('.image-container').append(img)
+	const query = `${endpoint}?api_key=${apiKey}&amp;date=${date}`
 
-			document.querySelector('p').innerText = title
-		})
+	return fetch(query)
+				.then((response) =&gt; response.json())
 }
 
-// Wait some time before loading the image
-setTimeout(fetchRandomImage, Math.random() * 2000)
+function getImageFromSpace() {
+	getRandomSpaceImageInfo().then((imageInfo) =&gt; {
+		const imageTitle = imageInfo.title
+		const imageUrl = imageInfo.url
+
+		// Update the text to be the image title
+		const textElement = document.querySelector('p')
+		textElement.innerText = imageTitle
+
+		// Create a new image element from the url ...
+		const imageElement = document.createElement('img')
+		imageElement.src = imageUrl
+		
+		// ... and insert it in the document!
+		const imageContainer = document.querySelector('.image-container')
+		imageContainer.appendChild(imageElement)
+	})
+}
+
+// A random number between 0 and 3000
+const delay = Math.random() * 3000
+
+// Wait `delay` milliseconds, then run the function `getImageFromSpace`
+setTimeout(getImageFromSpace, delay)
 
 </code></pre>
-<p>Here we use the NASA API to load a random astronomy image each time someone visits our page.</p>
+<p>The new function <code>getRandomSpaceInfo</code> does the <code>GET</code> request from before, and also asks for the image for a random day so that we get a different one each time.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="ch2-2-make-it-pretty.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="web-requests.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
+                        
+                            <a rel="next" href="ch3-0-whats-next.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -228,16 +225,35 @@ setTimeout(fetchRandomImage, Math.random() * 2000)
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch2-2-make-it-pretty.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="web-requests.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
+                    <a href="ch3-0-whats-next.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
             </nav>
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

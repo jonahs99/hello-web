@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Which platform? - Making on the Web</title>
+        <title>Wait a second - Making on the Web</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html" class="active"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html" class="active"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,32 +145,53 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#which-platform" id="which-platform">Which platform?</a></h1>
-<p>So you have an idea and want to build something to share with the world! Before you get started, you have to chose a platform build for. Really you want to build for everyone, but you have to start somewhere. Will you chose:</p>
-<ul>
-<li>Mobile (iOS or Android? or Windows Phone?)</li>
-<li>Desktop (Mac or Windows? what about Linux?)</li>
-</ul>
-<p>In general, each platform has different capabilities so you need different tools to make things for them. If you want to reach multiple platforms you basically have to rewrite your app.</p>
-<p>But every platform has a web browser! And every web browser is (almost) the same! Look what we get if we make a web app:</p>
-<ul>
-<li>Almost any platform can run it</li>
-<li>Sharing is a breeze</li>
-<li>No app store! No updates!</li>
-</ul>
+                        <h1><a class="header" href="#wait-a-second" id="wait-a-second">Wait a second</a></h1>
+<p>Now we'll add some code to show an image. We include code in our app by putting a <code>&lt;script&gt;</code> tag within the <code>&lt;body&gt;</code> of our html document:</p>
+<pre><code class="language-html">&lt;body&gt;
+	...
+		&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>The internet is pretty quick, so if we wanted we could provide instant gratification. To build anticipation though, let's add a delay to simulate a trip from space.</p>
+<pre><code class="language-javascript">function getImageFromSpace() {
+	const imageUrl = 'https://apod.nasa.gov/apod/image/1910/JupiterShadow_JunoGill_3535.jpg'
+	const imageTitle = 'Io Eclipse Shadow on Jupiter from Juno'
+
+	// Update the text to be the image title
+	const textElement = document.querySelector('p')
+	textElement.innerText = imageTitle
+
+	// Create a new image element from the url ...
+	const imageElement = document.createElement('img')
+	imageElement.src = imageUrl
+	
+	// ... and insert it in the document!
+	const imageContainer = document.querySelector('.image-container')
+	imageContainer.appendChild(imageElement)
+}
+
+// A random number between 0 and 3000
+const delay = Math.random() * 3000
+
+// Wait `delay` milliseconds, then run the function `getImageFromSpace`
+setTimeout(getImageFromSpace, delay)
+
+</code></pre>
+<p>The <code>setTimeout</code> function asks the browser to please run the function we give it after a delay, which is exactly what we wanted.</p>
+<p>That's a nice picture of Jupiter, but it would be nice if we could get a new image every time. That's next!</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="ch1-0-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="outer-space.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="ch2-0-simple.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="web-requests.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -182,13 +203,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch1-0-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="outer-space.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch2-0-simple.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="web-requests.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

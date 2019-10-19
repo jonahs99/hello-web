@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.1.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.2.</strong> Make it pretty</a></li><li><a href="ch2-3-make-it-do-something.html"><strong aria-hidden="true">2.3.</strong> Make it do something</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,6 +146,17 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#making-on-the-web" id="making-on-the-web">Making on the web</a></h1>
+<p>Hi! This little book will walk us through making a simple web page.</p>
+<p>Here's the plan:</p>
+<ul>
+<li>intro 10 minutes</li>
+<li>playground 20 minutes</li>
+<li>simple page (html css) 20 minutes</li>
+<li>simple page (javasript) 15 minutes</li>
+<li>simple page (nasa api) 20 minutes</li>
+<li>extensions 60 minutes</li>
+<li>other resources, remainder</li>
+</ul>
 
                     </main>
 
@@ -168,6 +179,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         

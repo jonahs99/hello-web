@@ -1,36 +1,22 @@
-const userKey = 'NASA_API_KEY'
+function getImageFromSpace() {
+	const imageUrl = 'https://apod.nasa.gov/apod/image/1910/JupiterShadow_JunoGill_3535.jpg'
+	const imageTitle = 'Io Eclipse Shadow on Jupiter from Juno'
 
-function randn(n) {
-	return Math.floor(Math.random() * n)
+	// Update the text to be the image title
+	const textElement = document.querySelector('p')
+	textElement.innerText = imageTitle
+
+	// Create a new image element from the url ...
+	const imageElement = document.createElement('img')
+	imageElement.src = imageUrl
+	
+	// ... and insert it in the document!
+	const imageContainer = document.querySelector('.image-container')
+	imageContainer.appendChild(imageElement)
 }
 
-function randomDate() {
-	const year = (2010 + randn(10)).toString().padStart(4, '0')
-	const month = (1 + randn(12)).toString().padStart(2, '0')
-	const day = (1 + randn(28)).toString().padStart(2, '0')
-	return year + '-' + month + '-' + day
-}
+// A random number between 0 and 3000
+const delay = Math.random() * 3000
 
-function fetchRandomImage() {
-	const url = `https://api.nasa.gov/planetary/apod?api_key=${userKey}&date=${randomDate()}`
-	console.log(`fetching ${url}...`)
-	fetch(url)
-		.then(response => response.json())
-		.then(json => {
-			const { url, title } = json
-
-			if (url.slice(-4) !== '.jpg') {
-				setInterval(fetchRandomImage, 1000)
-				return
-			}
-
-			const img = new Image()
-			img.src = url
-			document.querySelector('.image-container').append(img)
-
-			document.querySelector('p').innerText = title
-		})
-}
-
-// Wait some time before loading the image
-setTimeout(fetchRandomImage, Math.random() * 2000)
+// Wait `delay` milliseconds, then run the function `getImageFromSpace`
+setTimeout(getImageFromSpace, delay)
