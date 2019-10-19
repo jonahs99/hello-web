@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,30 +148,23 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#making-on-the-web" id="making-on-the-web">Making on the web</a></h1>
-<p>Hi! This little book will walk us through making a simple web page.</p>
-<p>Here's the plan:</p>
+<p>Hi!</p>
+<p>When people think &quot;web dev&quot; I imagine they think of UI programming. My take is more that I want to make cool things that people can easily access.</p>
+<p>Your web browser is probably one of the biggest programs on your computer. It can really do a lot!</p>
+<p>What was originally about viewing documents (I'm not actually old enough to remember this) is now basically an operating system that can quickly spin up any kind of app. An app can be a blog, but it can also be a showcase for generative art or a multiplayer game or a complex drawing program.</p>
+<p>These days, I usually default to making on the web if I just want to try something out. Usually, it's possible to throw something together pretty quickly, and if I want to share it, it's so easy!</p>
+<p>Okay I hope you are convinced, let's take a look at the plan for today.</p>
+<h1><a class="header" href="#plan" id="plan">Plan</a></h1>
+<p>Hi! This little book will walk us through making a simple web app.</p>
+<p>If all goes well, we will:</p>
 <ul>
-<li>intro 10 minutes</li>
-<li>playground 20 minutes</li>
-<li>simple page (html css) 20 minutes</li>
-<li>simple page (javasript) 15 minutes</li>
-<li>simple page (nasa api) 20 minutes</li>
-<li>extensions 60 minutes</li>
-<li>other resources, remainder</li>
+<li>Learn the basic structure of a web application</li>
+<li>Use the dev tools to poke at running web apps</li>
+<li>Write our own web page</li>
+<li>Add code to our web page to make it do something</li>
 </ul>
-<h1><a class="header" href="#which-platform" id="which-platform">Which platform?</a></h1>
-<p>So you have an idea and want to build something to share with the world! Before you get started, you have to chose a platform build for. Really you want to build for everyone, but you have to start somewhere. Will you chose:</p>
-<ul>
-<li>Mobile (iOS or Android? or Windows Phone?)</li>
-<li>Desktop (Mac or Windows? what about Linux?)</li>
-</ul>
-<p>In general, each platform has different capabilities so you need different tools to make things for them. If you want to reach multiple platforms you basically have to rewrite your app.</p>
-<p>But every platform has a web browser! And every web browser is (almost) the same! Look what we get if we make a web app:</p>
-<ul>
-<li>Almost any platform can run it</li>
-<li>Sharing is a breeze</li>
-<li>No app store! No updates!</li>
-</ul>
+<p>Please feel free to deviate if you are curious about something!</p>
+<p>At then end, we will work on extending our space themed app. So if you find yourself with extra time, take a look at the NASA open APIs.</p>
 <h1><a class="header" href="#a-simple-page" id="a-simple-page">A simple page</a></h1>
 <p>A static website is a set of pages that a user can access and open in their browser.</p>
 <p>This book is a static website. Open up your dev tools <code>Ctrl/Cmd + Shift + I</code>, and take a look at what it's made of.</p>
@@ -224,10 +217,16 @@
 <li>Python 2: <code>python -m SimpleHTTPServer</code> <a href="https://www.python.org/doc/sunset-python-2/">(you should really upgrade!)</a></li>
 </ul>
 <p>Now check out your first app at <code>localhost:8000</code> in your browser.</p>
+<p>If you don't have python installed, you can instead type the local path of the <code>index.html</code> file into your address bar. Mine looks like <code>file:///home/jonah/uni/techx/1-hello-web/index.html</code>.</p>
 <p>You should see a friendly greeting! It's looking a bit generic though. We'll get to that next.</p>
 <h1><a class="header" href="#make-it-pretty" id="make-it-pretty">Make it pretty</a></h1>
-<p>Remember changing the colors with the dev tools? The styles are describes with CSS. Instead of applying styles to individual elements, we can group style rules together into a stylesheet to apply to the whole document.</p>
-<p>Update <code>index.html</code> to include a stylesheet.</p>
+<p>That's a start, but we need a bit more.</p>
+<p>We'll update our <code>index.html</code> with a few changes:</p>
+<ul>
+<li>We nest some of our content in <code>&lt;div&gt;</code> elements. This let's us style the layout of the page.</li>
+<li>We add a <code>&lt;p&gt;</code> text element for what will be the image title.</li>
+<li>There's a <code>&lt;head&gt;</code> section outside of the <code>&lt;body&gt;</code> now. This section does not get displayed.</li>
+</ul>
 <p>Filename: <code>2-make-it-pretty/index.html</code></p>
 <pre><code class="language-html">&lt;html&gt;
 	&lt;head&gt;
@@ -238,17 +237,22 @@
 	&lt;body&gt;
 		&lt;div class=&quot;full-screen&quot;&gt;
 			&lt;h1&gt;Hello web!&lt;/h1&gt;
-			&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
+			&lt;div class=&quot;image-container&quot;&gt;
+				&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
+			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/body&gt;
 &lt;/html&gt;
 
 </code></pre>
-<p>And add the styles in a new file <code>style.css</code>.</p>
+<p>The <code>&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;/&gt;</code> tells the browser to find the file <code>style.css</code> and apply those styles to our page.</p>
+<p>Remember changing the colors with the dev tools? The styles are describes with CSS. Instead of applying styles to individual elements, we can group style rules together into a stylesheet to apply to the whole document.</p>
+<p>So we should add the styles in a new file <code>style.css</code>.</p>
 <p>Filename: <code>2-make-it-pretty/style.css</code></p>
 <pre><code class="language-css">body {
 	background: #333;
 	color: #eee;	
+
 	font-family: 'Source Sans Pro', sans-serif;
 	text-align: center;
 }
@@ -263,9 +267,51 @@
 }
 
 </code></pre>
-<p>Try adding or changing the styles. What changes if you change <code>body</code>?</p>
+<p>Each section applies to some of the elements in the document. The <code>body</code> section applies to the <code>&lt;body&gt;</code> and all its children (that's everything!). The <code>.full-screen</code> sections applies to anything with <code>class=&quot;full-screen&quot;</code> in our HTML.</p>
+<p>Try adding or changing the styles. What does <code>background: #333</code> do?</p>
 <p>What a cliff hanger!</p>
 <h1><a class="header" href="#outer-space" id="outer-space">Outer space</a></h1>
+<p>So far, we've seen how HTML and CSS can be used to describe the content and look of a document.</p>
+<p>You can do a surprising amount with just HTML and CSS, but when we want to specify a specific set of instruction for our app to do, it is nicer to use JavaScript. Where HTML and CSS are both <em>declaritive</em> (how should the page look?), JavaScript is <em>imperative</em> (what should the page do?).</p>
+<p>In this section, we will write some JavaScript to run a sequence of operations, so that we choose a random image, load the image, and show it to the user.</p>
+<p>Here's a quick overview of some syntax we will use. You should try typing these commands in the console (that tab in the dev tools).</p>
+<pre><code class="language-javascript">// Two slashes indicate a comment
+// The browser ignores these lines
+
+// Declare a variable that will not change with `const`
+// ( You can use `let` if you must )
+const name = 'techx'
+
+// Format strings with this funny syntax
+const greeting = `Hello ${name}!`
+
+// Print text to the console with `console.log`
+console.log(greeting)
+
+// Define a function like this
+function add(x, y) {
+	return x + y
+}
+
+// Or like this
+const imReallyTheSame = (x, y) =&gt; x + y
+
+// Calling functions
+console.log('1 + 2 =', add(1, 2))
+console.log('3 + 4 =', imReallyTheSame(3, 4))
+
+// An `Object` is a key-value store that maps really nicely to JSON
+const asteroid = {
+	key: 'value',
+	id: 123,
+	size: 'big',
+}
+
+// Access object values with `object.key`
+console.log('the asteroid is', asteroid.size)
+
+</code></pre>
+<p>Now let's embed a script in our app.</p>
 <h1><a class="header" href="#wait-a-second" id="wait-a-second">Wait a second</a></h1>
 <p>Now we'll add some code to show an image. We include code in our app by putting a <code>&lt;script&gt;</code> tag within the <code>&lt;body&gt;</code> of our html document:</p>
 <pre><code class="language-html">&lt;body&gt;
@@ -273,7 +319,11 @@
 		&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-<p>The internet is pretty quick, so if we wanted we could provide instant gratification. To build anticipation though, let's add a delay to simulate a trip from space.</p>
+<p>Make a new file <code>script.js</code> and see that it runs when the page loads by adding a friendly greeting to the script.</p>
+<pre><code class="language-javascript">console.log('hello from javascript')
+</code></pre>
+<p>The internet is pretty quick, so if we wanted we could load an image immediately and provide instant gratification. To build anticipation though, let's add a delay to simulate a trip from space.</p>
+<p>Filename: <code>3-make-it-do-something/script.js</code></p>
 <pre><code class="language-javascript">function getImageFromSpace() {
 	const imageUrl = 'https://apod.nasa.gov/apod/image/1910/JupiterShadow_JunoGill_3535.jpg'
 	const imageTitle = 'Io Eclipse Shadow on Jupiter from Juno'
@@ -299,7 +349,7 @@ setTimeout(getImageFromSpace, delay)
 
 </code></pre>
 <p>The <code>setTimeout</code> function asks the browser to please run the function we give it after a delay, which is exactly what we wanted.</p>
-<p>That's a nice picture of Jupiter, but it would be nice if we could get a new image every time. That's next!</p>
+<p>That's a nice picture of Jupiter, but it would be nice if we could get a new image every time. To do that, we'll need to reach outside our own app. We'll see how that works next.</p>
 <h1><a class="header" href="#web-requests" id="web-requests">Web Requests</a></h1>
 <p>So far, we haven't made much use of the web in our web app.</p>
 <p>When you go type <code>localhost:8000</code> in your browser address bar, the browser asks the internet</p>
@@ -307,7 +357,7 @@ setTimeout(getImageFromSpace, delay)
 <p>please, could you get <code>localhost:8000</code> for me?</p>
 </blockquote>
 <p>It's called a <code>GET</code> request, and in this case, the same computer was listening, and responds by sending the <code>index.html</code> file so it can be displayed.</p>
-<p><code>GET</code> requests aren't only for web pages though. Depending on who you ask, you get different things back. NASA has a computer somewhere listening for computers to ask it for links to astronomy images. Try typing this address in your browser bar</p>
+<p><code>GET</code> requests aren't only for web pages though. Depending on who you ask, you get different things back. It turns out that NASA has a computer somewhere listening for computers to ask it for links to astronomy images. Try typing this address in your browser bar</p>
 <pre><code>https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 </code></pre>
 <p>The NASA computer responds with some info including a link to the image. The format is JSON:</p>
@@ -319,9 +369,10 @@ setTimeout(getImageFromSpace, delay)
 	...
 }
 </code></pre>
+<p>What's that url link? I ran this yesterday, so you should get a different link.</p>
 <p>In the next section we will have our app request a random image from NASA each time the page loads.</p>
 <h1><a class="header" href="#go-fetch" id="go-fetch">Go fetch</a></h1>
-<p>We will update the <code>getImageFromSpace</code> to get a random image each time it is called.</p>
+<p>We will update the <code>getImageFromSpace</code> function to get a random image each time it is called.</p>
 <p>Filename: <code>4-go-fetch/script.js</code></p>
 <pre><code class="language-js">function randn(n) {
 	// Random integer from [0, n)
@@ -345,6 +396,7 @@ function getRandomSpaceImageInfo() {
 
 	const query = `${endpoint}?api_key=${apiKey}&amp;date=${date}`
 
+	// Make the request
 	return fetch(query)
 				.then((response) =&gt; response.json())
 }
@@ -376,8 +428,21 @@ setTimeout(getImageFromSpace, delay)
 
 </code></pre>
 <p>The new function <code>getRandomSpaceInfo</code> does the <code>GET</code> request from before, and also asks for the image for a random day so that we get a different one each time.</p>
+<p>Why all these nested functions? There are steps in our program that cannot happen immediately, because they have to wait for things to happen:</p>
+<ul>
+<li>When we <code>fetch</code>, we have to wait for NASA to get back to us</li>
+<li>Then when we get the message, we have to wait for the browser to parse the JSON</li>
+<li>Then we can load the image</li>
+</ul>
+<p>When we want to wait for something to happen and then do something else, we wrap the later steps in a function and use <code>then</code> to call it with the result of what we were waiting on. This requires the function we're calling to be designed to allow this, by returning a <code>Promise</code>.</p>
+<p>This is a really important use of functions in web development. They allow us to specify something to do <em>before</em> actually executing it.</p>
 <h1><a class="header" href="#whats-next" id="whats-next">What's next</a></h1>
+<p>Astronomy picture of the day is nice, and NASA has other <a href="https://api.nasa.gov/">public APIs</a>.</p>
+<p>For the rest of the workshop, try choosing a different NASA API or any other API you know how to access to extend or make a new app.</p>
+<p>You might find some of the resources on the next page helpful.</p>
 <h1><a class="header" href="#helpful-resources" id="helpful-resources">Helpful resources</a></h1>
+<p><a href="https://developer.mozilla.org/en-US/">MDN</a>: For general Javascript/HTML/CSS questions. Half of my google searches are something like <code>mdn array splice</code>.</p>
+<p><a href="https://reactjs.org/">React</a>: For declaritive UI programming.</p>
 <h1><a class="header" href="#go-make-something" id="go-make-something">Go make something!</a></h1>
 <p>Thanks for coming :)</p>
 

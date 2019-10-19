@@ -23,7 +23,7 @@ Filename: `2-make-it-pretty/style.css`
 {{#include ../../2-make-it-pretty/style.css}}
 ```
 
-Each section applies to some of the elements in the document. The `body` section applies to the `body` and all its children (that's everything!). The `.full-screen` sections applies to anything with `class="full-screen"` in our HTML.
+Each section applies to some of the elements in the document. The `body` section applies to the `<body>` and all its children (that's everything!). The `.full-screen` sections applies to anything with `class="full-screen"` in our HTML.
 
 Try adding or changing the styles. What does `background: #333` do?
 

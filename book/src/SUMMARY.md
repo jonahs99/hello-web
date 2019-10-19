@@ -1,7 +1,7 @@
 # Summary
 
 - [Making on the web](./ch1-0-intro.md)
-	- [Which platform?](./ch1-1-which-platform.md)
+	- [Plan](./plan.md)
 
 - [A simple page](./ch2-0-simple.md)
 	- [Playground](./ch2-1-playground.md)

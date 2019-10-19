@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html" class="active"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html" class="active"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,8 +146,13 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#make-it-pretty" id="make-it-pretty">Make it pretty</a></h1>
-<p>Remember changing the colors with the dev tools? The styles are describes with CSS. Instead of applying styles to individual elements, we can group style rules together into a stylesheet to apply to the whole document.</p>
-<p>Update <code>index.html</code> to include a stylesheet.</p>
+<p>That's a start, but we need a bit more.</p>
+<p>We'll update our <code>index.html</code> with a few changes:</p>
+<ul>
+<li>We nest some of our content in <code>&lt;div&gt;</code> elements. This let's us style the layout of the page.</li>
+<li>We add a <code>&lt;p&gt;</code> text element for what will be the image title.</li>
+<li>There's a <code>&lt;head&gt;</code> section outside of the <code>&lt;body&gt;</code> now. This section does not get displayed.</li>
+</ul>
 <p>Filename: <code>2-make-it-pretty/index.html</code></p>
 <pre><code class="language-html">&lt;html&gt;
 	&lt;head&gt;
@@ -158,17 +163,22 @@
 	&lt;body&gt;
 		&lt;div class=&quot;full-screen&quot;&gt;
 			&lt;h1&gt;Hello web!&lt;/h1&gt;
-			&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
+			&lt;div class=&quot;image-container&quot;&gt;
+				&lt;p&gt;Waiting for an image from space...&lt;/p&gt;
+			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/body&gt;
 &lt;/html&gt;
 
 </code></pre>
-<p>And add the styles in a new file <code>style.css</code>.</p>
+<p>The <code>&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;/&gt;</code> tells the browser to find the file <code>style.css</code> and apply those styles to our page.</p>
+<p>Remember changing the colors with the dev tools? The styles are describes with CSS. Instead of applying styles to individual elements, we can group style rules together into a stylesheet to apply to the whole document.</p>
+<p>So we should add the styles in a new file <code>style.css</code>.</p>
 <p>Filename: <code>2-make-it-pretty/style.css</code></p>
 <pre><code class="language-css">body {
 	background: #333;
 	color: #eee;	
+
 	font-family: 'Source Sans Pro', sans-serif;
 	text-align: center;
 }
@@ -183,7 +193,8 @@
 }
 
 </code></pre>
-<p>Try adding or changing the styles. What changes if you change <code>body</code>?</p>
+<p>Each section applies to some of the elements in the document. The <code>body</code> section applies to the <code>&lt;body&gt;</code> and all its children (that's everything!). The <code>.full-screen</code> sections applies to anything with <code>class=&quot;full-screen&quot;</code> in our HTML.</p>
+<p>Try adding or changing the styles. What does <code>background: #333</code> do?</p>
 <p>What a cliff hanger!</p>
 
                     </main>

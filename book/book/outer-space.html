@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html" class="active"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html" class="active"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,6 +146,47 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#outer-space" id="outer-space">Outer space</a></h1>
+<p>So far, we've seen how HTML and CSS can be used to describe the content and look of a document.</p>
+<p>You can do a surprising amount with just HTML and CSS, but when we want to specify a specific set of instruction for our app to do, it is nicer to use JavaScript. Where HTML and CSS are both <em>declaritive</em> (how should the page look?), JavaScript is <em>imperative</em> (what should the page do?).</p>
+<p>In this section, we will write some JavaScript to run a sequence of operations, so that we choose a random image, load the image, and show it to the user.</p>
+<p>Here's a quick overview of some syntax we will use. You should try typing these commands in the console (that tab in the dev tools).</p>
+<pre><code class="language-javascript">// Two slashes indicate a comment
+// The browser ignores these lines
+
+// Declare a variable that will not change with `const`
+// ( You can use `let` if you must )
+const name = 'techx'
+
+// Format strings with this funny syntax
+const greeting = `Hello ${name}!`
+
+// Print text to the console with `console.log`
+console.log(greeting)
+
+// Define a function like this
+function add(x, y) {
+	return x + y
+}
+
+// Or like this
+const imReallyTheSame = (x, y) =&gt; x + y
+
+// Calling functions
+console.log('1 + 2 =', add(1, 2))
+console.log('3 + 4 =', imReallyTheSame(3, 4))
+
+// An `Object` is a key-value store that maps really nicely to JSON
+const asteroid = {
+	key: 'value',
+	id: 123,
+	size: 'big',
+}
+
+// Access object values with `object.key`
+console.log('the asteroid is', asteroid.size)
+
+</code></pre>
+<p>Now let's embed a script in our app.</p>
 
                     </main>
 

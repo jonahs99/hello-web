@@ -20,6 +20,7 @@ function getRandomSpaceImageInfo() {
 
 	const query = `${endpoint}?api_key=${apiKey}&date=${date}`
 
+	// Make the request
 	return fetch(query)
 				.then((response) => response.json())
 }

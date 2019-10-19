@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="ch1-1-which-platform.html"><strong aria-hidden="true">1.1.</strong> Which platform?</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html" class="active"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
+                <ol class="chapter"><li><a href="ch1-0-intro.html"><strong aria-hidden="true">1.</strong> Making on the web</a></li><li><ol class="section"><li><a href="plan.html"><strong aria-hidden="true">1.1.</strong> Plan</a></li></ol></li><li><a href="ch2-0-simple.html"><strong aria-hidden="true">2.</strong> A simple page</a></li><li><ol class="section"><li><a href="ch2-1-playground.html"><strong aria-hidden="true">2.1.</strong> Playground</a></li><li><a href="ch2-1-hello-web.html"><strong aria-hidden="true">2.2.</strong> Hello web!</a></li><li><a href="ch2-2-make-it-pretty.html"><strong aria-hidden="true">2.3.</strong> Make it pretty</a></li></ol></li><li><a href="outer-space.html"><strong aria-hidden="true">3.</strong> Outer space</a></li><li><ol class="section"><li><a href="wait-a-second.html"><strong aria-hidden="true">3.1.</strong> Wait a second</a></li><li><a href="web-requests.html"><strong aria-hidden="true">3.2.</strong> Web Requests</a></li><li><a href="go-fetch.html" class="active"><strong aria-hidden="true">3.3.</strong> Go fetch</a></li></ol></li><li><a href="ch3-0-whats-next.html"><strong aria-hidden="true">4.</strong> What's next</a></li><li><ol class="section"><li><a href="ch3-1-helpful-resources.html"><strong aria-hidden="true">4.1.</strong> Helpful resources</a></li><li><a href="ch3-2-go-make-something.html"><strong aria-hidden="true">4.2.</strong> Go make something!</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,7 +146,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#go-fetch" id="go-fetch">Go fetch</a></h1>
-<p>We will update the <code>getImageFromSpace</code> to get a random image each time it is called.</p>
+<p>We will update the <code>getImageFromSpace</code> function to get a random image each time it is called.</p>
 <p>Filename: <code>4-go-fetch/script.js</code></p>
 <pre><code class="language-js">function randn(n) {
 	// Random integer from [0, n)
@@ -170,6 +170,7 @@ function getRandomSpaceImageInfo() {
 
 	const query = `${endpoint}?api_key=${apiKey}&amp;date=${date}`
 
+	// Make the request
 	return fetch(query)
 				.then((response) =&gt; response.json())
 }
@@ -201,6 +202,14 @@ setTimeout(getImageFromSpace, delay)
 
 </code></pre>
 <p>The new function <code>getRandomSpaceInfo</code> does the <code>GET</code> request from before, and also asks for the image for a random day so that we get a different one each time.</p>
+<p>Why all these nested functions? There are steps in our program that cannot happen immediately, because they have to wait for things to happen:</p>
+<ul>
+<li>When we <code>fetch</code>, we have to wait for NASA to get back to us</li>
+<li>Then when we get the message, we have to wait for the browser to parse the JSON</li>
+<li>Then we can load the image</li>
+</ul>
+<p>When we want to wait for something to happen and then do something else, we wrap the later steps in a function and use <code>then</code> to call it with the result of what we were waiting on. This requires the function we're calling to be designed to allow this, by returning a <code>Promise</code>.</p>
+<p>This is a really important use of functions in web development. They allow us to specify something to do <em>before</em> actually executing it.</p>
 
                     </main>
 
